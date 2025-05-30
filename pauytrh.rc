@@ -10,13 +10,6 @@ cdls() {
     ls
 }
 
-profile() {
-   [[ -f ~/$USER.rc ]] && source ~/$USER.rc
-   [[ "$1" == "q" ]] && exit
-}
-
-alias pq="profile q"
-alias prof="profile"
 alias clr="clear"
 alias x="exit"
 alias py="python"
