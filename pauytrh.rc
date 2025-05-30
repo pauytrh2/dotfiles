@@ -1,0 +1,37 @@
+#!/usr/bin/bash
+
+mkcd() {
+    mkdir "$1"
+    cd "$1"
+}
+
+cdls() {
+    cd "$1"
+    ls
+}
+
+profile() {
+   [[ -f ~/$USER.rc ]] && source ~/$USER.rc
+   [[ "$1" == "q" ]] && exit
+}
+
+alias pq="profile q"
+alias prof="profile"
+alias clr="clear"
+alias x="exit"
+alias py="python"
+
+alias ls="ls -a" # override default 'ls' with 'ls -a'
+
+PS1='\[\e[0;36m\]$(date +\T | cut -c1-5) \d \[\e[1;34m\]\u\[\e[0;35m\] \w \[\e[1;37m\] \n\$ '
+
+if [ -d "$HOME/bashmods" ]; then
+  for file in "$HOME/bashmods"/*; do
+    [ -f "$file" ] && { source "$file"; echo "Sourced: $file"; }
+  done
+  echo "Sourcing bashmods exited with code $(echo $?), nice bashing!"
+else
+  echo "Directory ~/bashmods does not exist."
+fi
+
+ff
