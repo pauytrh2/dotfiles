@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-alias agi="/bin/python /home/pauytrh/agi-or-smth/main.py"
+alias agi="/usr/bin/python /home/pauytrh/Code/agi-or-smth/main.py"

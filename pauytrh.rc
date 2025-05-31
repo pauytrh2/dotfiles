@@ -1,5 +1,7 @@
 #!/usr/bin/bash
 
+source ~/bashmods/do-not-source/wal.bash
+
 mkcd() {
     mkdir "$1"
     cd "$1"
@@ -13,6 +15,9 @@ cdls() {
 alias clr="clear"
 alias x="exit"
 alias py="python"
+untar() {
+    tar -xvzf "$1"
+}
 
 alias ls="ls -a" # override default 'ls' with 'ls -a'
 
