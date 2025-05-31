@@ -1,3 +1,3 @@
 #!/usr/bin/bash
 
-ftxt() { sudo nano $(fzf --preview 'cat {}'); }
+ftxt() { sudo nano $(fzf --preview "bat --color=always {}"); }
