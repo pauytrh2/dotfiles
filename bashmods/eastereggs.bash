@@ -62,3 +62,5 @@ slay() {
     fi
   done
 }
+
+my_name_is() { echo "slim shady?..."; }
