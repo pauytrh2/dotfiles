@@ -6,3 +6,6 @@ All of my dotfiles
 - Arch linux btw btw btw
 - Hyprland
 - Bash
+- Kitty
+- Cava
+- Waybar
