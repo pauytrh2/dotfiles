@@ -33,5 +33,6 @@ else
   echo "Directory ~/bashmods does not exist."
 fi
 
+clear
 # ff
-clear;hyfetch
+hyfetch
