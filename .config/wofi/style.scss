@@ -11,14 +11,13 @@
 			background-color: rgba(24,24,24,0.6);
 			color: #f2f2f2;
 			border: none;
-			border-bottom: 1px solid rgba(24,24,24,0.2);
 			padding: 0.8rem 1rem;
 			font-size: 1.5rem;
 			border-radius: 1rem 1rem 0 0;
 			&:focus, &:focus-visible, &:active {
 				border: none;
-				outline: 2px solid transparent;
-				outline-offset: 2px;
+				outline: none;
+				box-shadow: none;
 			}
 		}
 
@@ -53,6 +52,3 @@
 		}
 	}
 }
-
-
-
