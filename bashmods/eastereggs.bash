@@ -64,3 +64,5 @@ slay() {
 }
 
 my_name_is() { echo "slim shady?..."; }
+
+grrr() { echo "grrr your mom"; }
