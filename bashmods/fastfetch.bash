@@ -4,5 +4,5 @@ ff() {
     if [[ "$1" == "-c" ]]; then
         clear
     fi
-    fastfetch --config ~/bashmods/fastfetch/biff.jsonc
+    fastfetch --config $HOME/.config/bashmods/fastfetch/biff.jsonc
 }

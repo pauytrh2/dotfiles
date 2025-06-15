@@ -1,6 +1,6 @@
 #!/usr/bin/bash
 
-source ~/bashmods/do-not-source/wal.bash
+source $HOME/.config/bashmods/do-not-source/wal.bash
 
 mkcd() {
     mkdir "$1"
@@ -24,13 +24,13 @@ alias ls="ls -a" # override default 'ls' with 'ls -a'
 
 PS1='\[\e[0;36m\]$(date +\T | cut -c1-5) \d \[\e[1;34m\]\u\[\e[0;35m\] \w \[\e[1;37m\] \n\$ '
 
-if [ -d "$HOME/bashmods" ]; then
-  for file in "$HOME/bashmods"/*; do
+if [ -d "$HOME/.config/bashmods" ]; then
+  for file in "$HOME/.config/bashmods"/*; do
     [ -f "$file" ] && { source "$file"; echo "Sourced: $file"; }
   done
   echo "Sourcing bashmods exited with code $(echo $?), nice bashing!"
 else
-  echo "Directory ~/bashmods does not exist."
+  echo "Directory $HOME/bashmods does not exist."
 fi
 
 clear
