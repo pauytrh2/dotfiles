@@ -29,6 +29,8 @@ abbr -a cl "clear;ls -a"
 abbr -a cr "cargo run"
 abbr -a cf "cargo fmt"
 abbr -a cfr "cargo fmt;cargo run"
+abbr -a y "yay"
+abbr -a yr "yay -R"
 
 # fish_greeting
 function fish_greeting
