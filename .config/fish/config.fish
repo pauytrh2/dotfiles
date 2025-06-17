@@ -6,6 +6,7 @@
 source (/usr/local/bin/starship init fish --print-full-init | psub)
 zoxide init fish --cmd cd | source
 fzf --fish | source
+fish_config theme choose "Dracula Official"
 
 if status --is-interactive
     # set up colors
@@ -101,3 +102,13 @@ function monthly
     sudo journalctl --vacuum-time=7d
     echo ""
 end
+
+# cdls
+function cdls
+    if test (count $argv) -eq 0
+        cd ~; and ls
+    else
+        cd $argv[1]; and ls
+    end
+end
+
