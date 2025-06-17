@@ -25,6 +25,9 @@ abbr -a icat "kitty +kitten icat"
 abbr -a x "exit"
 abbr -a py "python"
 abbr -a cl "clear;ls -a"
+abbr -a cr "cargo run"
+abbr -a cf "cargo fmt"
+abbr -a cfr "cargo fmt;cargo run"
 
 # fish_greeting
 function fish_greeting
