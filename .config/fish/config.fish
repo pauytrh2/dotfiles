@@ -16,21 +16,21 @@ end
 
 # abbr's
 abbr -a c "clear"
-abbr -a fc "cd ~/.config/fish/;nano config.fish"
-abbr -a lg "lazygit"
 abbr -a l "ls -a"
-abbr -a hypr "cd ~/.config/hypr;nano hyprland.conf"
+abbr -a x "exit"
+abbr -a y "yay"
 abbr -a ys "yay -S"
+abbr -a yr "yay -R"
+abbr -a py "python"
+abbr -a lg "lazygit"
+abbr -a cl "clear;ls -a"
+abbr -a fc "cd ~/.config/fish/;nano config.fish"
+abbr -a hypr "cd ~/.config/hypr;nano hyprland.conf"
 abbr -a disk "cd /;sudo ncdu;cd -"
 abbr -a icat "kitty +kitten icat"
-abbr -a x "exit"
-abbr -a py "python"
-abbr -a cl "clear;ls -a"
 abbr -a cr "cargo run"
 abbr -a cf "cargo fmt"
 abbr -a cfr "cargo fmt;cargo run"
-abbr -a y "yay"
-abbr -a yr "yay -R"
 
 # fish_greeting
 function fish_greeting
