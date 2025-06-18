@@ -14,6 +14,9 @@ if status --is-interactive
     clear
 end
 
+# variables
+set -g PAGER bat
+
 # abbr's
 abbr -a c "clear"
 abbr -a ls "ls -a"
