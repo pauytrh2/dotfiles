@@ -16,6 +16,7 @@ end
 
 # abbr's
 abbr -a c "clear"
+abbr -a ls "ls -a"
 abbr -a l "ls -a"
 abbr -a x "exit"
 abbr -a y "yay"
@@ -114,4 +115,3 @@ function cdls
         cd $argv[1]; and ls
     end
 end
-
