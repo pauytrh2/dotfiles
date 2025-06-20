@@ -16,6 +16,7 @@ end
 
 # variables
 set -g PAGER bat
+set -g EDITOR nano
 
 # abbr's
 abbr -a c "clear"
@@ -28,6 +29,8 @@ abbr -a yr "yay -R"
 abbr -a py "python"
 abbr -a lg "lazygit"
 abbr -a cl "clear;ls -a"
+abbr -a hdh "echo all | history delete history"
+abbr -a hd "history delete"
 abbr -a fc "cd ~/.config/fish/;nano config.fish"
 abbr -a hypr "cd ~/.config/hypr;nano hyprland.conf"
 abbr -a disk "cd /;sudo ncdu;cd -"
