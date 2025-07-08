@@ -380,7 +380,10 @@
             "notificationVolume": 75
         },
         "OnePingPerDM": {
-            "enabled": true
+            "enabled": true,
+            "channelToAffect": "both_dms",
+            "allowMentions": false,
+            "allowEveryone": false
         },
         "oneko": {
             "enabled": false
@@ -718,6 +721,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1751969298887
+        "settingsSyncVersion": 1751971231129
     }
 }
