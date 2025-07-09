@@ -3,3 +3,6 @@
 .config/vesktop/settings.json
 .config/vesktop/state.json
 .config/vesktop/settings/quickCss.css
+.config/vesktop/SingletonCookie
+.config/vesktop/SingletonLock
+.config/vesktop/SingletonSocket
