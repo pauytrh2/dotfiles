@@ -131,3 +131,8 @@ function cdto
     mkdir $argv[1]
     cd $argv[1]
 end
+
+# linux-discord-rich-presence
+function ldrp
+    linux-discord-rich-presence -c ~/.config/richrc
+end

@@ -1,0 +1,59 @@
+#!/usr/bin/python3
+
+import json
+from os import environ, popen
+from sys import stdout
+from time import sleep
+
+arch_image = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fcdn0.iconfinder.com%2Fdata%2Ficons%2Fflat-round-system%2F512%2Farchlinux-512.png&f=1&nofb=1&ipt=3c5228a06496e06d64388396922e28ae2bdbbed31a279674e3c1e3d71e56eb2a"
+computer_image = "https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fgifdb.com%2Fimages%2Fhigh%2Fcoding-animated-laptop-flow-stream-ja04010rm5o68zfk.gif&f=1&nofb=1&ipt=4939a756b294f3fab6f97023549a264aa6878d58a8cffa60d9c85398cf3937af"
+
+
+def cmd(command):
+    try:
+        with popen(command) as process:
+            return process.read().strip()
+    except Exception as e:
+        return f"Error: {e}"
+
+
+def update():
+    song_watcher = cmd("~/.local/bin/song_watcher_ldrp.bash")
+
+    if song_watcher:
+        song_info = "Listening to " + song_watcher
+    else:
+        song_info = "Kernel version " + cmd("uname -r")
+
+    rp_id = int(environ["RP_ID"])
+
+    return [
+        {
+            "application_id": rp_id,
+            "state": "",
+            "details": song_info,
+            "large_image": {
+                "key": computer_image,
+                "text": "Neovim is superior",
+            },
+            "small_image": {
+                "key": arch_image,
+                "text": "I Use Arch BTW",
+            },
+            "start_timestamp": int(cmd('date -d "$(uptime -s)" +%s')),
+            "buttons": [
+                {"label": "My website", "url": "https://pauytrh2.github.io/"},
+                {
+                    "label": "Darkweb version",
+                    "url": "https://pauymnsckwzjnogwrdxw2zekefawxjf2xddjylswpkrccmqmzaukcdqd.onion/",
+                },
+            ],
+            "party": [42, 69],
+        }
+    ]
+
+
+while True:
+    print(json.dumps(update()))
+    stdout.flush()
+    sleep(5)
