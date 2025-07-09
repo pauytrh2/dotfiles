@@ -42,6 +42,7 @@ abbr -a cr "cargo run"
 abbr -a cf "cargo fmt"
 abbr -a cfr "cargo fmt;cargo run"
 abbr -a timeshift "sudo timeshift --snapshot-device /dev/nvme0n1p2"
+abbr -a grep "rg"
 
 # fish_greeting
 function fish_greeting
