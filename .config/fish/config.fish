@@ -44,11 +44,6 @@ abbr -a cfr "cargo fmt;cargo run"
 abbr -a timeshift "sudo timeshift --snapshot-device /dev/nvme0n1p2"
 abbr -a grep "rg"
 
-# fish_greeting
-function fish_greeting
-    hyfetch
-end
-
 # update
 function up
     sudo timeshift --create && yay --noconfirm
@@ -135,4 +130,9 @@ end
 # linux-discord-rich-presence
 function ldrp
     linux-discord-rich-presence -c ~/.config/richrc
+end
+
+# fish_greeting
+function fish_greeting
+    hyfetch
 end
