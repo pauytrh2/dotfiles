@@ -592,7 +592,7 @@
             "enabled": false
         },
         "Translate": {
-            "enabled": true,
+            "enabled": false,
             "showChatBarButton": true,
             "service": "google",
             "deeplApiKey": "",
@@ -721,6 +721,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1751971231129
+        "settingsSyncVersion": 1752237034911
     }
 }
