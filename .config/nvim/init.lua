@@ -687,6 +687,11 @@ require("lazy").setup({
               chainingHints = true,
               maxLength = nil,
             },
+            diagnostics = {
+              enable = true,
+              disabled = {},
+              enableExperimental = true,
+            },
           },
         },
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
