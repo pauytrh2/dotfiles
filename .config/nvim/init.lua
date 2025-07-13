@@ -755,9 +755,6 @@ require('lazy').setup({
     opts = {
       notify_on_error = false,
       format_on_save = function(bufnr)
-        -- Disable "format_on_save lsp_fallback" for languages that don't
-        -- have a well standardized coding style. You can add additional
-        -- languages here or re-enable it for the disabled ones.
         local disable_filetypes = { c = true, cpp = true }
         if disable_filetypes[vim.bo[bufnr].filetype] then
           return nil
@@ -768,13 +765,25 @@ require('lazy').setup({
           }
         end
       end,
+
       formatters_by_ft = {
         lua = { 'stylua' },
-        -- Conform can also run multiple formatters sequentially
-        -- python = { "isort", "black" },
-        --
-        -- You can use 'stop_after_first' to run the first available formatter from the list
-        -- javascript = { "prettierd", "prettier", stop_after_first = true },
+        python = { 'black' },
+        javascript = { 'prettier' },
+        typescript = { 'prettier' },
+        sh = { 'shfmt' },
+      },
+
+      formatters = {
+        prettier = {
+          prepend_args = { '--tab-width', '4', '--use-tabs', 'false' },
+        },
+        shfmt = {
+          prepend_args = { '-i', '4' },
+        },
+        stylua = {
+          -- stylua uses its own config file (see below)
+        },
       },
     },
   },
@@ -1014,10 +1023,10 @@ require('lazy').setup({
   },
 })
 
-vim.opt.expandtab = true -- Use spaces instead of tabs
-vim.opt.shiftwidth = 4 -- Number of spaces for each indentation level
-vim.opt.tabstop = 4 -- Number of spaces a tab counts for
-vim.opt.softtabstop = 4 -- Number of spaces when pressing tab
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
+vim.opt.tabstop = 4
+vim.opt.softtabstop = 4
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
