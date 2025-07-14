@@ -202,6 +202,60 @@ vim.keymap.set('n', '<C-l>', '<C-w><C-l>', { desc = 'Move focus to the right win
 vim.keymap.set('n', '<C-j>', '<C-w><C-j>', { desc = 'Move focus to the lower window' })
 vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper window' })
 
+-- Lazygit integration
+local function find_git_root()
+  local uv = vim.loop
+  local path = vim.fn.expand '%:p:h'
+  while path ~= '/' do
+    local git_dir = path .. '/.git'
+    local stat = uv.fs_stat(git_dir)
+    if stat and stat.type == 'directory' then
+      return path
+    end
+    local parent = uv.fs_realpath(path .. '/..')
+    if not parent then
+      break
+    end
+    path = parent
+  end
+  return nil
+end
+
+function _G.open_lazygit()
+  local git_root = find_git_root()
+  if not git_root then
+    print 'Git repo not found!'
+    return
+  end
+
+  local width = math.floor(vim.o.columns * 0.9)
+  local height = math.floor(vim.o.lines * 0.8)
+  local row = math.floor(((vim.o.lines - height) / 2) - 2)
+  local col = math.floor((vim.o.columns - width) / 2)
+
+  local buf = vim.api.nvim_create_buf(false, true)
+
+  local win = vim.api.nvim_open_win(buf, true, {
+    relative = 'editor',
+    width = width,
+    height = height,
+    row = row,
+    col = col,
+    style = 'minimal',
+    border = 'rounded',
+  })
+
+  vim.api.nvim_command(string.format 'setlocal winhl=Normal:Normal')
+  vim.api.nvim_set_current_win(win)
+  vim.cmd('lcd ' .. git_root)
+
+  vim.api.nvim_command 'terminal lazygit'
+
+  vim.api.nvim_buf_set_keymap(buf, 'n', 'q', '<cmd>close<CR>', { noremap = true, silent = true })
+end
+
+vim.api.nvim_set_keymap('n', '<leader>g', ':lua open_lazygit()<CR>', { noremap = true, silent = true })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
