@@ -728,15 +728,25 @@ require('lazy').setup({
         rust_analyzer = {
           settings = {
             ['rust-analyzer'] = {
+              diagnostics = {
+                enable = true,
+              },
               cargo = {
                 allFeatures = true,
               },
               checkOnSave = {
                 command = 'clippy',
               },
+              inlayHints = {
+                locationLinks = false,
+                typeHints = true,
+                chainingHints = true,
+                parameterHints = true,
+              },
             },
           },
         },
+
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
         -- Some languages (like typescript) have entire language plugins that can be useful:
