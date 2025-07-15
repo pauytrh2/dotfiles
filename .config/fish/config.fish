@@ -4,7 +4,6 @@
 
 # set up tools
 source (/usr/bin/starship init fish --print-full-init | psub)
-zoxide init fish --cmd cd | source
 fzf --fish | source
 fish_config theme choose "Dracula Official"
 
