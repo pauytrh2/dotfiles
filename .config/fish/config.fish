@@ -133,6 +133,28 @@ function ldrp
     linux-discord-rich-presence -c ~/.config/richrc
 end
 
+function asm
+    if test (count $argv) -lt 1
+        echo "Usage: asm_build <filename_without_extension>"
+        return 1
+    end
+
+    set name $argv[1]
+    nasm -f elf64 -o $name.o $name.asm
+    if test $status -ne 0
+        echo "nasm failed"
+        return 1
+    end
+
+    ld -o $name $name.o
+    if test $status -ne 0
+        echo "ld failed"
+        return 1
+    end
+
+    echo "Build complete: $name"
+end
+
 # fish_greeting
 function fish_greeting
     hyfetch
