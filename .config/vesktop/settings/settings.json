@@ -62,7 +62,8 @@
             "file": true
         },
         "AnonymiseFileNames": {
-            "enabled": true
+            "enabled": true,
+            "anonymiseByDefault": true
         },
         "AppleMusicRichPresence": {
             "enabled": false
@@ -448,7 +449,8 @@
             "groups": true,
             "servers": true,
             "friends": true,
-            "friendRequestCancels": true
+            "friendRequestCancels": true,
+            "notices": false
         },
         "ReplaceGoogleSearch": {
             "enabled": true,
@@ -721,6 +723,6 @@
         "authenticated": false,
         "url": "https://api.vencord.dev/",
         "settingsSync": false,
-        "settingsSyncVersion": 1752237034911
+        "settingsSyncVersion": 1752841214518
     }
 }
