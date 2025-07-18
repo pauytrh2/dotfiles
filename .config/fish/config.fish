@@ -152,7 +152,12 @@ function asm
         return 1
     end
 
-    echo "Build complete: $name"
+    echo "Build complete: '$name'"
+    echo "Running '$name'..."
+
+    ./$name
+
+    rm $name $name.o
 end
 
 # fish_greeting
