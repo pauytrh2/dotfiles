@@ -44,6 +44,7 @@ abbr -a cc "cargo clippy"
 abbr -a cfr "cargo fmt;cargo clippy;cargo run"
 abbr -a timeshift "sudo timeshift --snapshot-device /dev/nvme0n1p2"
 abbr -a grep rg
+abbr -a htop "htop -t"
 abbr -a lrc "cd /home/pauytrh/Code/;sort lrc.txt | uniq | fzf;nvim lrc.txt"
 
 # update
