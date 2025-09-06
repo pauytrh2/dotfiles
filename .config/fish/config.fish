@@ -65,13 +65,6 @@ end
 # monthly maintenance script
 function monthly
     echo ----------------------------------------------------
-    echo "UPDATING SYSTEM"
-    echo ----------------------------------------------------
-
-    yay -Syu
-
-    echo ""
-    echo ----------------------------------------------------
     echo "CLEARING PACMAN CACHE"
     echo ----------------------------------------------------
 
