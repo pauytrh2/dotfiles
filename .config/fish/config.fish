@@ -24,8 +24,8 @@ abbr -a l "ls -lah"
 abbr -a x exit
 abbr -a n nvim
 abbr -a y yay
-abbr -a ys "yay -Syu"
-abbr -a yr "yay -Rns"
+abbr -a ys "yay -S --noconfirm"
+abbr -a yr "yay -Rns --noconfirm"
 abbr -a py python
 abbr -a lg lazygit
 abbr -a cl "clear;ls -lah"
