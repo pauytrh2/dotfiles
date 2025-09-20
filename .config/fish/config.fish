@@ -7,10 +7,10 @@ source (/usr/bin/starship init fish --print-full-init | psub)
 fzf --fish | source
 fish_config theme choose "Dracula Official"
 
-if status --is-interactive
-    wal -i ~/Pictures/colors.png &>/dev/null &
-    disown
-end
+# if status --is-interactive
+#     wal -i ~/Pictures/colors.png &>/dev/null &
+#     disown
+# end
 
 # variables
 set -g PAGER bat
