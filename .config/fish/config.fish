@@ -68,7 +68,7 @@ function monthly
     echo "CLEARING PACMAN CACHE"
     echo ----------------------------------------------------
 
-    set pacman_cache_space_used (du -sh /var/cache/pacman/pkg/ | cut -f1)
+    set pacman_cache_space_used (sudo du -sh /var/cache/pacman/pkg/ | cut -f1)
     echo "Space currently in use: $pacman_cache_space_used"
     echo ""
     echo "Clearing Cache, leaving newest 2 versions:"
