@@ -19,8 +19,8 @@ set -g LIBCLANG_PATH /usr/lib
 
 # abbr's
 abbr -a c clear
-abbr -a ls "ls -lah"
-abbr -a l "ls -lah"
+abbr -a ls "exa --icons"
+abbr -a l "exa --icons"
 abbr -a x exit
 abbr -a n nvim
 abbr -a y yay
@@ -28,7 +28,7 @@ abbr -a ys "yay -S --noconfirm"
 abbr -a yr "yay -Rns --noconfirm"
 abbr -a py python
 abbr -a lg lazygit
-abbr -a cl "clear;ls -lah"
+abbr -a cl "clear;exa --icons"
 abbr -a hdh "echo all | history delete history"
 abbr -a hd "history delete"
 abbr -a vc "cd ~/.config/nvim/;$EDITOR init.lua"
@@ -46,6 +46,7 @@ abbr -a timeshift "sudo timeshift --snapshot-device /dev/nvme0n1p2"
 abbr -a grep rg
 abbr -a htop "htop -t"
 abbr -a lrc "cd /home/pauytrh/Code/;sort lrc.txt | uniq | fzf;nvim lrc.txt"
+abbr -a fm "ranger"
 
 # update
 function up
@@ -111,9 +112,9 @@ end
 # cdls
 function cdls
     if test (count $argv) -eq 0
-        cd ~; and ls
+        cd ~; and exa --icons
     else
-        cd $argv[1]; and ls
+        cd $argv[1]; and exa --icons
     end
 end
 
@@ -159,3 +160,4 @@ end
 function fish_greeting
     hyfetch
 end
+
