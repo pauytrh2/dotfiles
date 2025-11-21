@@ -1,6 +1,6 @@
 [opener]
 play = [
-    { run = 'vlc "$@"', orphan = true },
+    { run = 'mpv "$@"', orphan = true },
 ]
 edit = [
     { run = 'nvim "$@"', block = true },
