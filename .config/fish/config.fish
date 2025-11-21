@@ -5,6 +5,7 @@
 # set up tools
 source (/usr/bin/starship init fish --print-full-init | psub)
 fzf --fish | source
+zoxide init fish | source
 fish_config theme choose "Dracula Official"
 
 # if status --is-interactive
@@ -47,6 +48,7 @@ abbr -a grep rg
 abbr -a htop "htop -t"
 abbr -a lrc "cd /home/pauytrh/Code/;sort lrc.txt | uniq | fzf;nvim lrc.txt"
 abbr -a fm "yazi"
+abbr -a cd "z"
 
 # update
 function up
