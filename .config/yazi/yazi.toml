@@ -1,0 +1,10 @@
+[opener]
+play = [
+    { run = 'vlc "$@"', orphan = true },
+]
+edit = [
+    { run = 'nvim "$@"', block = true },
+]
+open = [
+    { run = 'xdg-open "$@"' },
+]
