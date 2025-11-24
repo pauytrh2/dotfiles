@@ -255,6 +255,7 @@ function _G.open_lazygit()
 end
 
 vim.api.nvim_set_keymap('n', '<leader>g', ':lua open_lazygit()<CR>', { noremap = true, silent = true })
+vim.keymap.set('n', '-', '<CMD>Oil<CR>', { desc = 'Open parent directory' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
